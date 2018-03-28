@@ -1,8 +1,10 @@
-import FluentSQLite
+import FluentPostgreSQL
 import Vapor
 
 /// A single entry of a Todo list.
-final class Todo: SQLiteModel {
+final class Todo: PostgreSQLModel {
+    static let idKey: WritableKeyPath<Todo, Int?> = \Todo.id
+
     /// The unique identifier for this `Todo`.
     var id: Int?
 

@@ -1,0 +1,30 @@
+version: '3'
+services:
+  ngrok:
+    image: wernight/ngrok
+    environment:
+    - NGROK_PORT=web:8080
+    ports:
+      - "4040:4040"
+    links:
+      - web
+  redis:
+    image: redis
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  web:
+    build: .
+    environment:
+      - DATABASE_HOSTNAME=db
+      - DATABASE_USERNAME=postgres
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    links:
+      - db
+      - redis
+    depends_on:
+      - db
+      - redis
