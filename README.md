@@ -11,9 +11,11 @@ Using Docker and Ngrok we can develop client applications for our Vapor APIs eas
 
 ## Usage - with sample project
 
-1. `docker-compose up** # starts the containers
-2. navigate to localhost:4040 # expose ngrok urls
-3. click on ngrok link to have access to your local docker
+1. `vapor update` # install the packages
+2. `docker-compose  build` # build the docker containers
+3. `docker-compose up` # starts the containers
+4. navigate to localhost:4040 # expose ngrok urls
+5. click on ngrok link to have access to your local docker
 
 ## Usage - with your project
 
@@ -24,3 +26,6 @@ Using Docker and Ngrok we can develop client applications for our Vapor APIs eas
 * script to install starter dockers scripts "Dockerfile" and "docker-compose.yml" into another vapor project to use as a template
 
 
+## Notes
+
+Docker will create a temp file for persistent data like the postgresql volume
