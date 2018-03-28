@@ -15,7 +15,7 @@ Using Docker and Ngrok we can develop client applications for our Vapor APIs eas
 2. `docker-compose  build` # build the docker containers
 3. `docker-compose up` # starts the containers
 4. navigate to localhost:4040 # expose ngrok urls
-5. click on ngrok link to have access to your local docker
+5. click on ngrok link to have access to your vapor application
 
 ## Usage - with your project
 
